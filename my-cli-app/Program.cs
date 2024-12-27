@@ -12,6 +12,17 @@ namespace MyCliApp
 
         var divideResult = Calculator.Divide(10, 2);
         Console.WriteLine($"10 / 2 = {divideResult}");
+
+        try
+        {
+            var divideResultZero = Calculator.Divide(10, 0);
+            Console.WriteLine($"10 / 0 = {divideResultZero}");
+        }
+        catch (DivideByZeroException ex)
+        {
+            Console.WriteLine("10 / 0 = Error: " + ex.Message); 
+        }
+
         }
     }
 }
